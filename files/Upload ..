@@ -1,1 +1,37 @@
+. The User interface has the following methods:
 
+    a. void setUserDetails(String name, int age, Long contact, String address): This method sets the user's name, age, contact, and address based on the provided parameters.
+
+    b. void getUserDetails(): This method prints the user's details, including their name, member type, age, contact, and address.
+
+2. Complete the Self class by adding the below-mentioned attributes and methods:
+
+      • name (String)
+
+      • age (int)
+
+      • contact (Long)
+
+      • address (String)
+
+      • Implement the User interface in the Self class and override the methods.
+
+3. Complete the Spouse class by adding the below-mentioned attributes and methods:
+
+      • name (String)
+
+      • age (int)
+
+      • contact (Long)
+
+      • address (String)
+
+      • Implement the User interface in the Spouse class and override the methods.
+
+4. Create the beans for User implementations in the applicationContext.xml file as described in the template.
+
+5. In the main() method, load context from the applicationContext.xml file which is located in "src>main>resources".
+
+6. Create a console application that selects the user and saves details for the selected user as shown in the output below.
+
+7. Test your implementation by running the Main class.
