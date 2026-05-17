@@ -1,28 +1,37 @@
 package com.example.Cinemaxify;
 
-// Override the User Interface methods in Self class
 public class Self implements User{
 
     private String name;
-    private String memberName = "self";
     private int age;
+    private String memberName = "self";
     private Long contact;
     private String address;
-	@Override
-	public void setUserDetails(String name, int age, Long contact, String address) {
-		// TODO Auto-generated method stub
-		
-		this.name = name;
-		this.age  = age;
-		this.contact = contact;
-		this.address = address;
-	}
-	@Override
-	public void getUserDetails() {
-		// TODO Auto-generated method stub
-		System.out.println("Hello "+this.name+" you have entered the following details for "+this.memberName+"\nage : "+this.age+"\ncontact : "+this.contact+"\naddress: "+this.address);
-		
-	}
-    
+    private Plan plan;
 
+    // Add setPlan(Plan plan) method which sets plan attribute:
+    
+    public void setPlan(Plan plan) {
+  		this.plan = plan;
+  	}
+
+    @Override
+    public void setUserDetails(String name, int age, Long contact, String address) {
+        this.name = name;
+        this.age = age;
+        this.contact = contact;
+        this.address = address;
+    }
+
+    @Override
+    public void getUserDetails() {
+        System.out.println("Hello " + name + " you have entered the following details:");
+        System.out.println("age: " +age + "\ncontact: " + contact + "\naddress: " +address);
+        System.out.println("You have selected a "+ plan.getPlanName() + " plan for " + memberName);
+    }
+
+    @Override
+    public Plan getUserPlan() {
+        return plan;
+    }
 }

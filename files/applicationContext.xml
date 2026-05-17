@@ -4,9 +4,25 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    Define the bean id with camelCase Format -->
-<!--    Example My class name is Self then camelCase name would be self -->
-        <bean id = "self" class = "com.example.Cinemaxify.Self" ></bean>
-        <bean id = "spouse" class = "com.example.Cinemaxify.Spouse"></bean>
+<!-- You need to replace the constructor-arg tag with property tag for setter injection   -->
+
+    <bean id="normal" class="com.example.Cinemaxify.NormalPlan" />
+    <bean id="premium" class="com.example.Cinemaxify.PremiumPlan" />
+
+    <bean id="selfNormal" class="com.example.Cinemaxify.Self" >
+    <property name="plan" ref = "normal"></property>
+    </bean>
+
+    <bean id="selfPremium" class="com.example.Cinemaxify.Self" >
+       <property name="plan" ref = "premium"></property>
+    </bean>
+
+    <bean id="spouseNormal" class="com.example.Cinemaxify.Spouse" >
+       <property name="plan" ref = "normal"></property>
+    </bean>
+
+    <bean id="spousePremium" class="com.example.Cinemaxify.Spouse">
+      <property name="plan" ref = "premium"></property>
+    </bean>
 
 </beans>
